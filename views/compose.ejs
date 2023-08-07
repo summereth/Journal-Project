@@ -1,0 +1,22 @@
+<%- include("partials/header.ejs") %>
+<h1>Compose</h1>
+<div>
+    <form class="row g-3" action="/compose" method="post">
+        <div class="form-group">
+            <div class="col-12">
+                <label for="titleInput" class="form-label">Title</label>
+                <input class="form-control" type="text" name="title" id="titleInput">
+            </div>
+
+            <div class="col-12">
+                <label for="contentInput" class="form-label">Post</label>
+                <textarea class="form-control" name="content" id="contentInput" cols="100" rows="10"></textarea>
+            </div>
+        </div>
+
+        <div class="col-12">
+            <input class="btn btn-primary" type="submit" name="button" value="Publish">
+        </div>
+    </form>
+</div>
+<%- include("partials/footer.ejs") %>

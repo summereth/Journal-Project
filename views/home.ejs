@@ -1,0 +1,21 @@
+<%- include("partials/header.ejs") %>
+<h1>Home</h1>
+<div>
+    <p><%= content %></p>
+</div>
+
+<% if (locals.posts) { %>
+    <% posts.forEach( post => { %>
+        <h1><%= post.title %></h1>
+        <% if (post.content.length > 200) { %>
+            <p>
+                <%= post.content.slice(0, 200) %>...
+                <a href="/posts/<%= post._id %>">Read More</a>
+            </p>
+        <% } else { %>
+            <p><%= post.content %></p>
+            <% } %>
+    <% }); %>
+    <% } %>
+
+<%- include("partials/footer.ejs") %>
